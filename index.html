@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1267c5"><title>ĐẤU TRƯỜNG TRI THỨC 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient a1"></div><div class="ambient a2"></div>
+<header class="topbar"><a class="brand" href="#"><span class="brandmark">✦</span><span>ĐẤU TRƯỜNG <b>TRI THỨC</b><small>3D KNOWLEDGE ARENA</small></span></a><div class="top-right"><span class="live-dot"></span><span id="connection">Đang kết nối...</span><button class="btn ghost small" id="homeBtn">Trang chủ</button></div></header>
+<main class="wrap">
+<section id="homeView" class="hero">
+ <div class="hero-copy"><div class="eyebrow">✧ SÂN CHƠI TRÍ TUỆ • KẾT NỐI TRỰC TUYẾN</div><h1>CHINH PHỤC<br><span>ĐẤU TRƯỜNG</span><br>TRI THỨC</h1><p>Thử thách kiến thức • Tốc độ tư duy • Tỏa sáng bản lĩnh</p>
+ <div class="hero-actions"><button class="btn primary" id="studentEnter">🎓 VÀO PHÒNG THI</button><button class="btn secondary" id="teacherEnter">⚙️ ĐIỀU KHIỂN GIÁO VIÊN</button></div>
+ <div class="feature-row"><span>⏱️ Đếm ngược trực tiếp</span><span>🏆 Bảng xếp hạng</span><span>✨ Vinh danh 3D</span></div></div>
+ <div class="hero-art"><div class="orbit orbit1"></div><div class="orbit orbit2"></div><div class="trophy">🏆</div><div class="float f1">📚</div><div class="float f2">🧠</div><div class="float f3">⭐</div><div class="pedestal">KNOWLEDGE<br>CHAMPION</div></div>
+</section>
+<section id="studentView" class="panel hidden">
+ <div class="section-head"><div><div class="eyebrow">🎓 KHU VỰC THÍ SINH</div><h2>Tham gia đấu trường</h2><p>Nhập thông tin để kết nối với phòng thi của giáo viên.</p></div><button class="btn ghost" data-home>← Quay lại</button></div>
+ <div id="studentJoin" class="form-grid"><label>Họ và tên<input id="studentName" maxlength="80" placeholder="Nguyễn Văn A"></label><label>Lớp<input id="studentClass" maxlength="30" placeholder="Ví dụ: 10A1"></label><label class="full">Mã phòng thi<input id="roomCode" maxlength="20" placeholder="Nhập mã phòng do giáo viên cung cấp"></label><button class="btn primary full" id="joinBtn">🚀 KẾT NỐI PHÒNG THI</button></div>
+ <div id="studentWaiting" class="waiting hidden"><div class="pulse-icon">⌛</div><h3 id="waitingTitle">Đã gửi yêu cầu tham gia!</h3><p id="waitingText">Vui lòng chờ giáo viên xác nhận.</p><div class="status-pill" id="studentStatus">ĐANG CHỜ XÁC NHẬN</div><div id="studentIdentity"></div></div>
+ <div id="studentQuiz" class="hidden"><div class="quiz-meta"><span id="quizRoom">PHÒNG THI</span><span id="quizProgress">CÂU 1/6</span></div><div class="timer-wrap"><div class="timer" id="timer">30</div><span>GIÂY</span></div><div class="progress"><i id="timerBar"></i></div><h2 id="questionText">Câu hỏi hiển thị tại đây</h2><div class="answers" id="answerOptions"></div><p class="muted center" id="answerNotice">Chọn một đáp án để ghi nhận câu trả lời.</p></div>
+ <div id="studentDone" class="waiting hidden"><div class="pulse-icon">🏁</div><h2>HOÀN THÀNH THỬ THÁCH!</h2><p id="studentFinal"></p><div class="status-pill">ĐÃ GHI NHẬN KẾT QUẢ</div></div>
+</section>
+<section id="teacherView" class="panel hidden">
+ <div id="teacherLogin"><div class="section-head"><div><div class="eyebrow">🔐 KHU VỰC QUẢN TRỊ</div><h2>Đăng nhập giáo viên</h2><p>Chỉ giáo viên được cấp quyền mới có thể điều khiển cuộc thi.</p></div><button class="btn ghost" data-home>← Quay lại</button></div><div class="login-box"><label>Tài khoản<input id="teacherUser" autocomplete="username" placeholder="Tên đăng nhập"></label><label>Mật khẩu<input id="teacherPass" type="password" autocomplete="current-password" placeholder="Mật khẩu"></label><button class="btn primary full" id="loginBtn">ĐĂNG NHẬP HỆ THỐNG</button><p class="muted tiny">Tài khoản mặc định được tạo khi chạy hàm setup() trong Apps Script. Hãy đổi mật khẩu ngay sau khi cài đặt.</p></div></div>
+ <div id="teacherDash" class="hidden">
+  <div class="section-head"><div><div class="eyebrow">🛡️ BẢNG ĐIỀU KHIỂN TRỰC TIẾP</div><h2>Phòng điều khiển giáo viên</h2><p>Quản lý thí sinh, biên soạn câu hỏi và theo dõi cuộc thi.</p></div><button class="btn ghost" id="logoutBtn">Đăng xuất</button></div>
+  <div class="stats"><div class="stat"><span>PHÒNG THI</span><b id="statRoom">Chưa tạo</b></div><div class="stat"><span>THÍ SINH KẾT NỐI</span><b id="statPlayers">0/24</b></div><div class="stat"><span>ĐÃ XÁC NHẬN</span><b id="statApproved">0/24</b></div><div class="stat"><span>TRẠNG THÁI</span><b id="statPhase">Chờ tạo phòng</b></div></div>
+  <div class="dashboard-grid">
+   <div class="card"><div class="card-title"><h3>🎮 Điều khiển cuộc thi</h3><span class="tag">LIVE CONTROL</span></div><div class="control-row"><button class="btn primary" id="createRoomBtn">＋ TẠO PHÒNG MỚI</button><button class="btn secondary" id="startBtn" disabled>▶ BẮT ĐẦU THI</button><button class="btn danger" id="endBtn" disabled>■ KẾT THÚC</button></div><div class="room-code-box"><span>MÃ PHÒNG</span><b id="roomCodeDisplay">— — — —</b><button class="btn ghost small" id="copyRoomBtn">Sao chép</button></div><p class="muted tiny">Cuộc thi chỉ bắt đầu khi đủ 24 học sinh đã được giáo viên xác nhận. Mỗi câu hỏi tự chuyển sau khi hết giờ.</p></div>
+   <div class="card"><div class="card-title"><h3>👥 Danh sách thí sinh</h3><span class="tag" id="playerCountTag">0 / 24</span></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Họ tên</th><th>Lớp</th><th>Máy</th><th>Trạng thái</th><th></th></tr></thead><tbody id="playersTable"><tr><td colspan="6" class="muted center">Chưa có thí sinh</td></tr></tbody></table></div><div class="control-row"><button class="btn secondary small" id="approveAllBtn">✓ Xác nhận tất cả</button><button class="btn ghost small" id="refreshBtn">↻ Làm mới</button></div></div>
+   <div class="card question-card"><div class="card-title"><h3>📝 Biên soạn câu hỏi</h3><span class="tag">QUESTION EDITOR</span></div><div class="editor-toolbar"><label>Số câu<input id="questionCount" type="number" min="1" max="30" value="6"></label><label>Thời gian mỗi câu (giây)<input id="questionDuration" type="number" min="5" max="180" value="30"></label><button class="btn ghost small" id="addQuestionBtn">＋ Thêm câu</button></div><div id="questionEditor"></div><button class="btn primary" id="saveQuestionsBtn">💾 LƯU NGÂN HÀNG CÂU HỎI</button><p class="muted tiny">Đáp án đúng được lưu riêng ở máy chủ và không gửi cho học sinh trước khi kết thúc câu hỏi.</p></div>
+   <div class="card"><div class="card-title"><h3>🏆 Bảng xếp hạng</h3><button class="btn ghost small" id="exportBtn">⬇ Xuất CSV</button></div><div id="leaderboard" class="leaderboard"><p class="muted">Kết quả sẽ xuất hiện sau cuộc thi.</p></div></div>
+  </div>
+ </div>
+</section>
+<section id="podiumView" class="panel hidden"><div class="eyebrow center">✦ THE MOMENT OF GLORY ✦</div><h2 class="center">VINH DANH NHÀ VÔ ĐỊCH</h2><div class="podium" id="podium"></div><div class="leaderboard final-board" id="finalBoard"></div><button class="btn primary" data-home>VỀ TRANG CHỦ</button></section>
+</main>
+<footer>© Bản quyền: <b>Cô Nguyễn Cẩm Linh – THCS Trần Hưng Đạo</b><span> • ĐẤU TRƯỜNG TRI THỨC 3D</span></footer>
+<div id="toast" class="toast"></div>
+<script src="firebase-config.js"></script><script src="app.js"></script>
+</body></html>
