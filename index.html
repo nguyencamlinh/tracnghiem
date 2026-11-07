@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7fbff">
+<title>Đấu Trường Tri Thức | THCS Trần Hưng Đạo</title>
+<style>
+:root{--blue:#1268d8;--cyan:#26c6f5;--navy:#102b54;--ink:#183153;--muted:#71839e;--line:#dce9f8;--bg:#f4f9ff;--white:#fff;--green:#16a878;--red:#e44d67;--gold:#ffbd35;--shadow:0 18px 50px #1b5a9b18}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 4%,#d9f3ff 0,transparent 28%),radial-gradient(circle at 90% 18%,#e2eaff 0,transparent 28%),linear-gradient(145deg,#f9fcff,#eef6ff);min-height:100vh}
+button,input{font:inherit}button{cursor:pointer;border:0} .hidden{display:none!important}
+.topbar{height:72px;padding:0 clamp(16px,4vw,56px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #dce9f880;background:#ffffffc9;backdrop-filter:blur(14px);position:sticky;top:0;z-index:5}
+.brand{display:flex;gap:12px;align-items:center;font-weight:900;letter-spacing:.02em}.brandmark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#0d5cc9,#28c5f2);display:grid;place-items:center;color:white;font-size:22px;box-shadow:0 8px 20px #147bd84a}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.14em;margin-top:2px}
+.top-actions{display:flex;gap:10px;align-items:center}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 13px;background:#fff;color:#58708e;font-size:12px;font-weight:700}
+main{max-width:1280px;margin:auto;padding:34px clamp(14px,3vw,38px) 64px}.hero{position:relative;overflow:hidden;border-radius:30px;padding:clamp(26px,5vw,64px);background:linear-gradient(115deg,#0d3470,#1269cb 56%,#20b8e9);color:#fff;box-shadow:0 28px 70px #145cb83b;min-height:300px}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #ffffff2b;border-radius:50%;width:420px;height:420px;right:-90px;top:-180px;box-shadow:0 0 0 34px #ffffff08,0 0 0 70px #ffffff06}.hero:after{width:210px;height:210px;right:90px;top:70px}
+.hero-content{position:relative;z-index:1;max-width:720px}.eyebrow{font-size:12px;letter-spacing:.2em;font-weight:900;color:#bcefff}.hero h1{font-size:clamp(34px,5vw,62px);line-height:1.02;margin:14px 0 12px;letter-spacing:-.04em}.hero p{color:#d7edff;max-width:620px;line-height:1.7}.hero-cup{position:absolute;right:9%;top:50%;transform:translateY(-50%);font-size:clamp(90px,15vw,180px);filter:drop-shadow(0 18px 18px #001b4c70);z-index:1;animation:float 4s ease-in-out infinite}@keyframes float{50%{transform:translateY(calc(-50% - 12px)) rotate(4deg)}}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{padding:13px 19px;border-radius:14px;font-weight:850;transition:.2s;display:inline-flex;gap:9px;align-items:center;justify-content:center}.btn:hover{transform:translateY(-2px);filter:brightness(1.04)}.btn-primary{background:linear-gradient(135deg,#fff,#e7f6ff);color:#0759b7;box-shadow:0 8px 20px #002a6940}.btn-blue{background:linear-gradient(135deg,#1674e8,#24bce9);color:#fff;box-shadow:0 10px 24px #1474d638}.btn-soft{background:#eaf4ff;color:#1765bd;border:1px solid #d3e8ff}.btn-danger{background:#fff0f2;color:#c83250;border:1px solid #ffd5dc}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:22px}.panel{background:#ffffffdb;border:1px solid #deebf8;border-radius:22px;padding:22px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}.span-8{grid-column:span 8}.span-4{grid-column:span 4}.span-12{grid-column:span 12}.panel h2{font-size:18px;margin:0 0 14px}.muted{color:var(--muted)}.tiny{font-size:12px}.field{display:flex;flex-direction:column;gap:7px;margin:13px 0}.field label{font-size:12px;font-weight:850;color:#526984}.field input{width:100%;border:1px solid #d8e6f5;background:#f9fcff;padding:13px 14px;border-radius:12px;outline:none;color:var(--ink)}.field input:focus{border-color:#56a9ef;box-shadow:0 0 0 4px #dff1ff}
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:15px;border-radius:16px;background:linear-gradient(145deg,#f2f8ff,#fff);border:1px solid #e0edfa}.stat strong{display:block;font-size:26px;color:#1268c9}.stat span{font-size:11px;color:var(--muted);font-weight:800}
+.section-title{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:26px 2px 12px}.section-title h2{margin:0;font-size:20px}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.slot{border:1px solid #dce9f8;border-radius:14px;padding:12px;background:#f9fcff;min-height:84px}.slot b{display:block;color:#1769c9;font-size:12px}.slot strong{display:block;font-size:12px;margin-top:7px;overflow-wrap:anywhere}.slot em{font-style:normal;font-size:10px;color:var(--muted)}
+.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#9aabc0;margin-right:5px}.status-dot.ok{background:#16b884;box-shadow:0 0 0 4px #16b88420}.status-dot.wait{background:#ffb52d}
+.question-shell{max-width:940px;margin:24px auto}.quiz-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:16px}.student-chip{background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 15px}.timer{width:86px;height:86px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#19a9e8 var(--progress,100%),#e4eef8 0);position:relative;font-size:25px;font-weight:950;color:#125eb4}.timer:before{content:"";position:absolute;inset:7px;background:white;border-radius:50%}.timer span{position:relative}.progress{height:8px;background:#e4effb;border-radius:99px;overflow:hidden;margin:16px 0 24px}.progress>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1471e3,#35c7ef);border-radius:99px;transition:width .3s}
+.qcard{background:#fff;border:1px solid #dceafb;border-radius:26px;padding:clamp(20px,4vw,38px);box-shadow:var(--shadow)}.qnumber{color:#1384d9;font-size:12px;font-weight:950;letter-spacing:.12em}.qtext{font-size:clamp(21px,3vw,30px);font-weight:900;line-height:1.35;margin:14px 0 26px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.answer{padding:17px;border:1.5px solid #dbe9f8;background:#f8fbff;border-radius:16px;text-align:left;display:flex;gap:12px;align-items:center;color:#274461;font-weight:750;min-height:72px;transition:.18s}.answer:hover{border-color:#5aadeb;transform:translateY(-2px);background:#f0f8ff}.answer.selected{border-color:#1475db;background:#e8f4ff;box-shadow:0 0 0 3px #1683e51c}.letter{width:34px;height:34px;flex:0 0 34px;border-radius:11px;display:grid;place-items:center;background:#e5f0fc;color:#1468c8;font-weight:950}
+.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid #e7eff8;white-space:nowrap}th{font-size:11px;color:#7488a2;text-transform:uppercase;letter-spacing:.07em}
+.badge{padding:5px 9px;border-radius:99px;background:#edf5ff;color:#1767bd;font-size:10px;font-weight:900}.badge.green{background:#e6faf3;color:#11865f}.badge.orange{background:#fff5df;color:#a56b00}.badge.red{background:#fff0f2;color:#c83a55}
+.result-podium{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end;margin:20px 0}.podium{border:1px solid var(--line);border-radius:18px;text-align:center;padding:20px 10px;background:linear-gradient(160deg,#fff,#f0f7ff)}.podium.first{padding-top:32px;background:linear-gradient(160deg,#fff9e8,#fff)}.medal{font-size:42px}.podium strong{display:block;margin:8px 0}.notice{padding:13px 15px;border-radius:13px;background:#eef7ff;color:#27577f;font-size:13px;line-height:1.5;border:1px solid #dceeff}
+.footer{text-align:center;color:#8da0b6;font-size:11px;margin:32px 0 0}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#102e55;color:white;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);z-index:20;transition:.25s;font-size:13px}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.span-8,.span-4{grid-column:span 12}.slots{grid-template-columns:repeat(3,1fr)}.hero-cup{opacity:.25;right:3%}}
+@media(max-width:560px){.topbar{height:62px}.brand{font-size:12px}.top-actions .pill{display:none}.hero{border-radius:22px}.answers{grid-template-columns:1fr}.quiz-head{align-items:flex-start}.timer{width:70px;height:70px;font-size:21px}.slots{grid-template-columns:repeat(2,1fr)}.statrow{grid-template-columns:1fr 1fr 1fr}.panel{padding:16px}.result-podium{gap:7px}.podium{padding:14px 5px}.podium strong{font-size:12px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="brand"><div class="brandmark">✦</div><div>ĐẤU TRƯỜNG TRI THỨC<small>THCS TRẦN HƯNG ĐẠO</small></div></div>
+ <div class="top-actions"><span class="pill">✧ GAMESHOW 3D</span><button class="btn btn-soft" id="teacherOpen">⚙ Giáo viên</button></div>
+</header>
+<main>
+ <section id="homeView">
+  <div class="hero"><div class="hero-content"><div class="eyebrow">✦ SÂN CHƠI TRÍ TUỆ • CHINH PHỤC TRI THỨC</div><h1>ĐẤU TRƯỜNG<br>TRI THỨC</h1><p>Thử thách bản lĩnh, tốc độ và kiến thức. Sáu câu hỏi – sáu cơ hội tỏa sáng – một bục vinh quang!</p><div class="actions"><button class="btn btn-primary" id="joinOpen">🚀 THAM GIA ĐẤU TRƯỜNG</button><button class="btn btn-soft" id="rulesBtn">ⓘ Thể lệ cuộc thi</button></div></div><div class="hero-cup">🏆</div></div>
+  <div class="grid">
+   <section class="panel span-8"><h2>🌟 Hành trình chinh phục</h2><div class="statrow"><div class="stat"><strong>06</strong><span>CÂU HỎI</span></div><div class="stat"><strong>30s</strong><span>MỖI CÂU</span></div><div class="stat"><strong>24</strong><span>MÁY TỐI ĐA</span></div></div><p class="muted tiny" style="line-height:1.7;margin:16px 0 0">Học sinh nhập họ tên và lớp, chờ giáo viên duyệt. Cuộc thi chỉ bắt đầu khi giáo viên phát lệnh. Giáo viên có thể cho phép bắt đầu với số lượng ít hơn 24.</p></section>
+   <section class="panel span-4"><h2>🎓 Kết nối đấu trường</h2><div class="stat"><strong id="homeCount">0/24</strong><span>THÍ SINH ĐÃ ĐĂNG KÝ</span></div><p class="muted tiny">Trạng thái cuộc thi: <b id="homeStatus">Đang chờ giáo viên mở phiên</b></p><button class="btn btn-blue" style="width:100%" id="joinOpen2">Vào đăng ký →</button></section>
+  </div>
+  <div class="section-title"><h2>✨ 24 vị trí thí sinh</h2><span class="muted tiny">Cập nhật trực tuyến</span></div><div class="slots" id="homeSlots"></div>
+ </section>
+
+ <section id="joinView" class="hidden">
+  <div class="section-title"><h2>🚀 Đăng ký tham gia</h2><button class="btn btn-soft" id="backHome">← Trang chủ</button></div>
+  <div class="panel" style="max-width:650px;margin:auto"><h2>Thông tin thí sinh</h2><p class="muted tiny">Chỉ cần nhập họ tên và lớp. Mỗi học sinh chỉ đăng ký một lần trong một phiên thi.</p>
+   <div class="field"><label>HỌ VÀ TÊN</label><input id="studentName" maxlength="80" placeholder="Ví dụ: Nguyễn Minh Anh" autocomplete="name"></div>
+   <div class="field"><label>LỚP</label><input id="studentClass" maxlength="20" placeholder="Ví dụ: 8A1"></div>
+   <button class="btn btn-blue" id="registerBtn" style="width:100%">GỬI ĐĂNG KÝ & CHỜ DUYỆT</button>
+   <div id="joinMessage" class="notice hidden" style="margin-top:14px"></div>
+  </div>
+ </section>
+
+ <section id="waitingView" class="hidden">
+  <div class="panel" style="max-width:760px;margin:28px auto;text-align:center;padding:36px 22px"><div style="font-size:64px">⏳</div><h2>ĐANG CHỜ GIÁO VIÊN XÁC NHẬN</h2><p id="waitingName" class="muted"></p><div class="notice">Bạn đã đăng ký thành công. Vui lòng giữ nguyên trang này. Khi giáo viên xác nhận và bắt đầu cuộc thi, hệ thống sẽ tự động chuyển sang màn hình làm bài.</div><div class="stat" style="margin:18px auto;max-width:220px"><strong id="waitingCount">0/24</strong><span>THÍ SINH ĐÃ ĐƯỢC DUYỆT</span></div><button class="btn btn-soft" id="leaveWait">Quay lại trang chủ</button></div>
+ </section>
+
+ <section id="quizView" class="hidden">
+  <div class="question-shell">
+   <div class="quiz-head"><div class="student-chip"><b id="quizName">Thí sinh</b><div class="muted tiny" id="quizClass">Lớp —</div></div><div style="text-align:center"><div class="timer" id="timer"><span id="timerText">30</span></div><div class="muted tiny">GIÂY CÒN LẠI</div></div></div>
+   <div class="progress"><i id="quizProgress"></i></div>
+   <div class="qcard"><div class="qnumber" id="qNumber">CÂU HỎI 01 / 06</div><div class="qtext" id="qText">Đang tải câu hỏi...</div><div class="answers" id="answers"></div><p class="muted tiny" id="answerHint">Chọn một đáp án. Câu trả lời được ghi nhận trên máy chủ.</p></div>
+  </div>
+ </section>
+
+ <section id="doneView" class="hidden">
+  <div class="panel" style="max-width:720px;margin:28px auto;text-align:center;padding:38px 22px"><div style="font-size:64px">🎉</div><h2>HOÀN THÀNH THỬ THÁCH!</h2><p id="doneText" class="muted">Bài thi của bạn đã được ghi nhận.</p><div class="notice">Kết quả chính thức và thứ hạng sẽ được giáo viên công bố sau khi cuộc thi kết thúc.</div><button class="btn btn-blue" id="doneHome" style="margin-top:18px">Về trang chủ</button></div>
+ </section>
+
+ <section id="teacherView" class="hidden">
+  <div class="section-title"><h2>🎛️ Trung tâm điều khiển giáo viên</h2><button class="btn btn-soft" id="teacherHome">← Trang chủ</button></div>
+  <div class="panel">
+   <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap"><div><h2 id="sessionTitle">Phiên thi</h2><p class="muted tiny" id="teacherStatus">Chưa kết nối máy chủ</p></div><span class="badge" id="sessionBadge">CHƯA MỞ PHIÊN</span></div>
+   <div class="statrow" style="margin:16px 0"><div class="stat"><strong id="tRegistered">0/24</strong><span>ĐÃ ĐĂNG KÝ</span></div><div class="stat"><strong id="tApproved">0</strong><span>ĐÃ XÁC NHẬN</span></div><div class="stat"><strong id="tFinished">0</strong><span>ĐÃ HOÀN THÀNH</span></div></div>
+   <div class="actions">
+    <button class="btn btn-blue" id="createSession">＋ TẠO PHIÊN THI MỚI</button>
+    <button class="btn btn-soft" id="approveAll">✓ XÁC NHẬN TẤT CẢ</button>
+    <button class="btn btn-blue" id="startSession">🚀 BẮT ĐẦU CUỘC THI</button>
+    <button class="btn btn-danger" id="endSession">■ KẾT THÚC CUỘC THI</button>
+    <button class="btn btn-soft" id="refreshTeacher">↻ Làm mới</button>
+   </div>
+   <p class="muted tiny" style="margin-top:13px">Có thể bắt đầu với ít hơn 24 học sinh nếu đã xác nhận ít nhất một thí sinh. Nút bắt đầu sẽ khóa danh sách và phát lệnh đồng loạt.</p>
+  </div>
+  <div class="grid">
+   <section class="panel span-8"><h2>🖥️ Giám sát 24 máy tính</h2><div class="table-wrap"><table><thead><tr><th>#</th><th>Học sinh</th><th>Lớp</th><th>Trạng thái</th><th>Điểm</th><th>Thao tác</th></tr></thead><tbody id="studentRows"><tr><td colspan="6" class="muted">Chưa có dữ liệu</td></tr></tbody></table></div></section>
+   <section class="panel span-4"><h2>📡 Điều khiển phiên</h2><div class="field"><label>MẬT KHẨU GIÁO VIÊN</label><input id="adminPin" type="password" placeholder="Nhập mã quản trị"></div><div class="notice">Mã quản trị được cấu hình trong Script Properties của Google Apps Script. Không lưu mã này trên GitHub.</div><div class="field"><label>TRẠNG THÁI KẾT NỐI</label><div id="connectionState" class="badge red">Chưa kết nối</div></div><button class="btn btn-soft" id="savePin" style="width:100%">Lưu mã trong phiên trình duyệt</button></section>
+  </div>
+  <div class="panel" style="margin-top:18px"><div class="section-title" style="margin:0 0 12px"><h2>🏆 Bảng xếp hạng</h2><button class="btn btn-soft" id="exportResults">⇩ Tải CSV</button></div><div id="leaderboard" class="muted tiny">Chưa có kết quả.</div></div>
+ </section>
+ <div class="footer">© Cô Nguyễn Cẩm Linh – THCS Trần Hưng Đạo · ĐẤU TRƯỜNG TRI THỨC</div>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+/* CẤU HÌNH: dán URL Web App Google Apps Script sau khi triển khai */
+const API_URL = "https://script.google.com/macros/s/AKfycbxLfVzzY8p8S7YybEwL5SRH3GMjyc266Kt99mVP1DOLq0p6mm9RXw_VOdH2EaLQT-Wr/exec";
+const MAX_STUDENTS = 24;
+const $ = id => document.getElementById(id);
+let currentStudent = JSON.parse(sessionStorage.getItem("dt_student")||"null");
+let adminPin = sessionStorage.getItem("dt_admin_pin")||"";
+let pollTimer = null, quizTimer = null, stateCache = null, selected = null, lastQuestion = -1, serverNowOffset = 0;
+const views=["homeView","joinView","waitingView","quizView","doneView","teacherView"];
+function show(id){views.forEach(v=>$(v).classList.toggle("hidden",v!==id));}
+function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2600)}
+function apiReady(){return API_URL.startsWith("https://script.google.com/") && !API_URL.includes("PASTE_")}
+function jsonp(action, params={}){return new Promise((resolve,reject)=>{if(!apiReady())return reject(Error("Chưa cấu hình API_URL trong index.html"));const cb="cb_"+Math.random().toString(36).slice(2);const script=document.createElement("script");const timer=setTimeout(()=>{cleanup();reject(Error("Máy chủ phản hồi quá thời gian"))},12000);function cleanup(){clearTimeout(timer);delete window[cb];script.remove()}window[cb]=data=>{cleanup();data&&data.ok?resolve(data):reject(Error(data?.error||"Lỗi máy chủ"))};const url=new URL(API_URL);url.searchParams.set("action",action);url.searchParams.set("callback",cb);Object.entries(params).forEach(([k,v])=>url.searchParams.set(k,typeof v==="object"?JSON.stringify(v):v));script.src=url.toString();script.onerror=()=>{cleanup();reject(Error("Không thể kết nối máy chủ"))};document.body.appendChild(script)})}
+function post(action,payload){return new Promise((resolve,reject)=>{if(!apiReady())return reject(Error("Chưa cấu hình API_URL trong index.html"));let frame=document.createElement("iframe");frame.name="post_"+Math.random().toString(36).slice(2);frame.style.display="none";document.body.appendChild(frame);let form=document.createElement("form");form.method="POST";form.action=API_URL;form.target=frame.name;form.style.display="none";let a=document.createElement("input");a.name="action";a.value=action;let b=document.createElement("input");b.name="payload";b.value=JSON.stringify(payload);form.append(a,b);document.body.appendChild(form);let done=false;const finish=(ok)=>{if(done)return;done=true;setTimeout(()=>{form.remove();frame.remove()},1000);ok?resolve({ok:true}):reject(Error("Không gửi được yêu cầu"))};form.submit();setTimeout(()=>finish(true),1800)})}
+async function refreshPublic(){try{let d=await jsonp("publicState");stateCache=d;renderPublic(d);if(currentStudent)syncStudent(d)}catch(e){$("homeStatus").textContent="Chưa kết nối máy chủ";}}
+function renderPublic(d){const s=d.session||{};const students=d.students||[];$("homeCount").textContent=students.length+"/24";$("homeStatus").textContent=({waiting:"Đang chờ thí sinh",running:"Đang diễn ra",ended:"Đã kết thúc"}[s.status]||"Đang chờ giáo viên mở phiên");$("homeSlots").innerHTML=Array.from({length:24},(_,i)=>{let p=students[i];return `<div class="slot"><b>VỊ TRÍ ${String(i+1).padStart(2,"0")}</b><strong>${p?esc(p.name):"Chưa có thí sinh"}</strong><em><span class="status-dot ${p?.status==="approved"||p?.status==="running"||p?.status==="finished"?"ok":p?"wait":""}"></span>${p?statusText(p.status):"Đang trống"}</em></div>`}).join("");}
+function statusText(s){return ({pending:"Chờ duyệt",approved:"Đã xác nhận",running:"Đang thi",finished:"Đã nộp bài",disconnected:"Mất kết nối"})[s]||s||"—"}
+function esc(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function startPolling(){clearInterval(pollTimer);pollTimer=setInterval(()=>{refreshPublic();if(!$("teacherView").classList.contains("hidden"))refreshTeacher()},2200)}
+$("joinOpen").onclick=$("joinOpen2").onclick=()=>{show("joinView");$("joinMessage").classList.add("hidden")};
+$("backHome").onclick=()=>show("homeView");$("leaveWait").onclick=()=>{currentStudent=null;sessionStorage.removeItem("dt_student");show("homeView")};
+$("rulesBtn").onclick=()=>alert("• Có 6 câu hỏi, mỗi câu tối đa 30 giây.\n• Chọn một đáp án cho mỗi câu.\n• Cuộc thi bắt đầu theo lệnh của giáo viên.\n• Xếp hạng theo số câu đúng, sau đó theo thời gian hoàn thành.\n• Mỗi học sinh chỉ được đăng ký một lần trong phiên thi.");
+$("registerBtn").onclick=async()=>{let name=$("studentName").value.trim(),klass=$("studentClass").value.trim();if(!name||!klass)return toast("Vui lòng nhập họ tên và lớp");$("registerBtn").disabled=true;try{let token=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():("st_"+Date.now()+"_"+Math.random().toString(36).slice(2));await post("register",{name,klass,token});currentStudent={token,name,klass};sessionStorage.setItem("dt_student",JSON.stringify(currentStudent));$("waitingName").textContent=name+" · "+klass;show("waitingView");toast("Đăng ký thành công")}catch(e){toast(e.message)}finally{$("registerBtn").disabled=false;refreshPublic()}};
+function syncStudent(d){if(!currentStudent)return;let p=(d.students||[]).find(x=>x.token===currentStudent.token);if(!p){if(d.session?.status==="waiting")return;return}if(p.status==="approved"&&d.session?.status==="waiting"){$("waitingCount").textContent=(d.students||[]).filter(x=>x.status!=="pending").length+"/24";}if(d.session?.status==="running"&&["approved","running"].includes(p.status)){if(!$("quizView").classList.contains("hidden"))return;show("quizView");$("quizName").textContent=p.name;$("quizClass").textContent="Lớp "+p.klass;runQuizPoll()}if(p.status==="finished"||d.session?.status==="ended"){if(!$("doneView").classList.contains("hidden"))return;show("doneView");$("doneText").textContent="Bài thi đã được ghi nhận. Hãy chờ giáo viên công bố kết quả."}}
+async function runQuizPoll(){clearInterval(quizTimer);await loadQuizState();quizTimer=setInterval(loadQuizState,700)}
+async function loadQuizState(){if(!currentStudent)return;try{let d=await jsonp("studentState",{token:currentStudent.token});serverNowOffset=(d.serverNow||Date.now())-Date.now();if(d.status==="ended"||d.status==="finished"){clearInterval(quizTimer);show("doneView");return}let idx=d.questionIndex;if(idx<0)return;if(idx>=6){clearInterval(quizTimer);show("doneView");return}if(idx!==lastQuestion){lastQuestion=idx;selected=null;renderQuestion(d.question,idx,d.questionEndsAt)}updateTimer(d.questionEndsAt)}catch(e){/* tiếp tục thử lại trong lần polling kế tiếp */}}
+function renderQuestion(q,idx,ends){$("qNumber").textContent=`CÂU HỎI ${String(idx+1).padStart(2,"0")} / 06`;$("qText").textContent=q.text;$("quizProgress").style.width=((idx)/6*100)+"%";let letters=["A","B","C","D"];let opts=q.options||[];$("answers").innerHTML=opts.map((v,i)=>`<button class="answer" data-i="${i}"><span class="letter">${letters[i]}</span><span>${esc(v)}</span></button>`).join("");[...$("answers").querySelectorAll("button")].forEach(b=>b.onclick=()=>chooseAnswer(Number(b.dataset.i),idx));}
+async function chooseAnswer(i,idx){if(selected!==null)return;selected=i;[...$("answers").querySelectorAll("button")].forEach((b,n)=>{b.disabled=true;if(n===i)b.classList.add("selected")});try{await post("answer",{token:currentStudent.token,questionIndex:idx,choice:i});$("answerHint").textContent="Đã ghi nhận lựa chọn của bạn."; }catch(e){$("answerHint").textContent="Chưa xác nhận được đáp án. Hệ thống sẽ thử đồng bộ."}}
+function updateTimer(ends){let remain=Math.max(0,Math.ceil((ends-(Date.now()+serverNowOffset))/1000));$("timerText").textContent=remain;$("timer").style.setProperty("--progress",(remain/30*100)+"%");if(remain<=5)$("timer").style.filter="drop-shadow(0 0 10px #ef6570")}
+$("doneHome").onclick=()=>{currentStudent=null;sessionStorage.removeItem("dt_student");show("homeView");refreshPublic()};
+$("teacherOpen").onclick=()=>{show("teacherView");$("adminPin").value=adminPin;refreshTeacher()};
+$("teacherHome").onclick=()=>show("homeView");$("savePin").onclick=()=>{adminPin=$("adminPin").value.trim();sessionStorage.setItem("dt_admin_pin",adminPin);toast("Đã lưu mã trong phiên trình duyệt");refreshTeacher()};
+async function admin(action,payload={}){let pin=$("adminPin").value.trim()||adminPin;if(!pin)throw Error("Nhập mật khẩu giáo viên");return post(action,{...payload,pin})}
+$("createSession").onclick=async()=>{try{await admin("createSession");toast("Đã tạo phiên thi mới");refreshTeacher()}catch(e){toast(e.message)}};
+$("approveAll").onclick=async()=>{try{await admin("approveAll");toast("Đã xác nhận thí sinh");refreshTeacher()}catch(e){toast(e.message)}};
+$("startSession").onclick=async()=>{if(!confirm("Bắt đầu cuộc thi ngay? Danh sách thí sinh sẽ được khóa."))return;try{await admin("startSession");toast("Đã phát lệnh bắt đầu");refreshTeacher()}catch(e){toast(e.message)}};
+$("endSession").onclick=async()=>{if(!confirm("Kết thúc cuộc thi và khóa bài làm?"))return;try{await admin("endSession");toast("Đã kết thúc cuộc thi");refreshTeacher()}catch(e){toast(e.message)}};
+$("refreshTeacher").onclick=refreshTeacher;
+async function refreshTeacher(){try{let d=await jsonp("adminState",{pin:$("adminPin").value.trim()||adminPin});$("connectionState").textContent="Đã kết nối";$("connectionState").className="badge green";$("teacherStatus").textContent="Đồng bộ lúc "+new Date().toLocaleTimeString("vi-VN");let s=d.session||{};$("sessionTitle").textContent=s.name||"Chưa có phiên thi";$("sessionBadge").textContent=({waiting:"ĐANG CHỜ",running:"ĐANG THI",ended:"ĐÃ KẾT THÚC"}[s.status]||"CHƯA MỞ PHIÊN");let st=d.students||[];$("tRegistered").textContent=st.length+"/24";$("tApproved").textContent=st.filter(x=>x.status!=="pending").length;$("tFinished").textContent=st.filter(x=>x.status==="finished").length;$("studentRows").innerHTML=st.length?st.map((p,i)=>`<tr><td>${i+1}</td><td><b>${esc(p.name)}</b></td><td>${esc(p.klass)}</td><td><span class="badge ${p.status==="finished"?"green":p.status==="pending"?"orange":""}">${statusText(p.status)}</span></td><td>${p.score==null?"—":p.score+"/6"}</td><td>${p.status==="pending"?`<button class="btn btn-soft" style="padding:7px 10px" onclick="approveOne('${p.token}')">Duyệt</button>`:"—"}</td></tr>`).join(""):'<tr><td colspan="6" class="muted">Chưa có thí sinh</td></tr>';renderLeaderboard(d.results||[])}catch(e){$("connectionState").textContent="Lỗi kết nối";$("connectionState").className="badge red";$("teacherStatus").textContent=e.message}}
+window.approveOne=async token=>{try{await admin("approveOne",{token});toast("Đã duyệt học sinh");refreshTeacher()}catch(e){toast(e.message)}};
+function renderLeaderboard(a){if(!a.length){$("leaderboard").textContent="Chưa có kết quả.";return}let sorted=[...a].sort((x,y)=>y.score-x.score||x.duration-y.duration||x.completedAt-y.completedAt);$("leaderboard").innerHTML=`<div class="result-podium">${sorted.slice(0,3).map((p,i)=>`<div class="podium ${i===0?"first":""}"><div class="medal">${["🥇","🥈","🥉"][i]}</div><strong>${esc(p.name)}</strong><span class="muted tiny">${esc(p.klass)} · ${p.score}/6 · ${formatTime(p.duration)}</span></div>`).join("")}</div><div class="table-wrap"><table><thead><tr><th>Hạng</th><th>Học sinh</th><th>Lớp</th><th>Điểm</th><th>Thời gian</th></tr></thead><tbody>${sorted.map((p,i)=>`<tr><td>${i+1}</td><td>${esc(p.name)}</td><td>${esc(p.klass)}</td><td>${p.score}/6</td><td>${formatTime(p.duration)}</td></tr>`).join("")}</tbody></table></div>`}
+function formatTime(ms){let sec=Math.max(0,Math.round(ms/1000));return Math.floor(sec/60)+":"+String(sec%60).padStart(2,"0")}
+$("exportResults").onclick=async()=>{try{let d=await jsonp("adminState",{pin:$("adminPin").value.trim()||adminPin});let rows=[["Hạng","Họ tên","Lớp","Điểm","Thời gian (ms)"],...(d.results||[]).sort((a,b)=>b.score-a.score||a.duration-b.duration).map((p,i)=>[i+1,p.name,p.klass,p.score,p.duration])];let csv="\ufeff"+rows.map(r=>r.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(",")).join("\r\n");let a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));a.download="ket-qua-dau-truong-tri-thuc.csv";a.click();URL.revokeObjectURL(a.href)}catch(e){toast(e.message)}};
+async function init(){show("homeView");await refreshPublic();startPolling();if(currentStudent){$("waitingName").textContent=currentStudent.name+" · "+currentStudent.klass;if(stateCache)syncStudent(stateCache)}}
+init();
+</script>
+</body></html>
